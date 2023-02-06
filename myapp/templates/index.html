@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรกของเว็บไซต์</title> 
+</head>
+<body>
+    
+    <a href="/">หน้าแรก</a>    
+    <a href="/about">เกี่ยวกับเรา</a>
+    <a href="/form">แบบฟอร์ม</a>
+    <hr>
+    <div>
+        <h1 style="color:royalblue;">Hello {{fname | upper}}</h1>
+        <h2>อายุ  {{age}} ปี</h2>
+        {% if age >= 30 %}
+            <h3>คุณเป็นวัยผู้ใหญ่</h3>
+        {% else %}
+            <h3>คุณเป็นนักศึกษาจบใหม่</h3>    
+        {% endif %}    
+        <p>You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+            Run 'python manage.py migrate' to apply them.</p>        
+
+    </div>
+
+
+
+</body>
+</html>
