@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from myapp.models import Person
 # Create your views here.
 
 def index(request):
     #return HttpResponse("<h1>Hello World</h1>") #แสดงข้อความ และใช้ภาษาHTMLได้
-    name = "Namcha"
-    age = 8
-    return render(request,"index.html",{"fname":name,"age":age}) #แสดงผลหน้าเว็บเพจที่อยู่ในไฟล์ index.html และในหน้านี้มีข้อมูล name age
+    #ดึงข้อมูลจาก Person มาทำงานใน views ฟังชัน index จากนั้นโยนข้อมูลไปทำงานที่ index.html
+    all_person = Person.objects.all() #.all() .filter(เงื่อนไข เช่น age = 25)  
+    return render(request,"index.html" , {"all_person":all_person}) 
 
 def about(request):
     #return HttpResponse("<h1>เกี่ยวกับเรา</h1>")

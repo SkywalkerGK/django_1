@@ -4,13 +4,5 @@
 {% endblock %}
 
 {% block content %}
-<h1 style="color:royalblue;">Hello {{fname | upper}}</h1>
-<h2>อายุ  {{age}} ปี</h2>
-{% if age >= 30 %}
-    <h3>คุณเป็นวัยผู้ใหญ่</h3>
-{% else %}
-    <h3>คุณเป็นนักศึกษาจบใหม่</h3>    
-{% endif %}    
-<p>You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
-    Run 'python manage.py migrate' to apply them.</p>    
+{{all_person}}
 {% endblock %}
