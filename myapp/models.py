@@ -6,3 +6,6 @@ class Person(models.Model):
     age = models.IntegerField()
     date = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name + "," + str(self.age)
+
