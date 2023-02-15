@@ -5,7 +5,8 @@
 
 {% block content %}
 <h2 class = "text-center">แบบฟอร์มบันทึกข้อมูลประชากร</h2>
-<form method="get">
+<form method="post" action="form">
+    {% csrf_token %}
     <div class="form-group">
         <label for = "name">ชื่อประชากร</label>
         <input type="text" name="name" class="form-control">

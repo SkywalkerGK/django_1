@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from myapp.models import Person
 # Create your views here.
@@ -15,4 +15,13 @@ def about(request):
 
 def form(request):
     #return HttpResponse("<h1>แบบฟอร์มบันทึกข้อมูล</h1>")
-    return render(request,"form.html") 
+    if request.method == "POST":
+        #รับข้อมูล
+        name = request.POST["name"]
+        age = request.POST["age"]
+        print(name , age)
+        return redirect("/") #กลับไปที่หน้าแรก /
+
+        #บันทึกข้อมูล
+    else :    
+        return render(request,"form.html") 
